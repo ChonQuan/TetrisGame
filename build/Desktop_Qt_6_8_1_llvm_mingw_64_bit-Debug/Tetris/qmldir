@@ -1,7 +1,0 @@
-module Tetris
-typeinfo appTetris.qmltypes
-prefer :/qt/qml/Tetris/
-Main 1.0 Main.qml
-GameView 1.0 GameView.qml
-Controls 1.0 Controls.qml
-
