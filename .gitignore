@@ -5,7 +5,7 @@
 *.qmake.cache
 
 # Ignore build directories
-build-*/
+build/
 debug/
 release/
 
