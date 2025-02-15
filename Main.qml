@@ -13,6 +13,7 @@ ApplicationWindow {
         id: background
         color: "#1A1A1A" // Dark theme
         anchors.fill: parent
+
         Row {
             id: tetrisRow
             anchors.fill: parent

@@ -35,4 +35,19 @@ Rectangle {
 
         }
     }
+    Rectangle {
+        anchors.fill: parent
+        visible: tetrisGame ? (tetrisGame.firstTime? false : (tetrisGame.gameOver ? true : false)) : false
+        opacity: 0.3
+    }
+    Text {
+        text: "Game Over"
+        color: "white"
+        font.pixelSize: 40
+        font.bold: true
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.centerIn: parent
+        visible: tetrisGame ? (tetrisGame.firstTime? false : (tetrisGame.gameOver ? true : false)) : false
+    }
 }

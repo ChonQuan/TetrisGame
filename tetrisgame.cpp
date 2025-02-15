@@ -2,7 +2,7 @@
 #include <QDebug>
 
 TetrisGame::TetrisGame(GridModel* gridmodel, QObject *parent)
-    : QObject(parent), m_score(0), m_gameOver(true), m_pauseGame(false) {
+    : QObject(parent), m_score(0), m_gameOver(true), m_pauseGame(false), m_firstTime(true) {
     // Initialize grid and game state
     m_gridmodel = gridmodel;
 
@@ -18,6 +18,10 @@ int TetrisGame::score() const {
     return m_score;
 }
 
+int TetrisGame::firstTime() const
+{
+    return m_firstTime;
+}
 
 int TetrisGame::gameOver() const
 {
@@ -116,6 +120,7 @@ void TetrisGame::reset() {
     // Reset game variables
     updateGameOver(false);
     updatePauseGame(false);
+    updateFirstTime(false);
     m_score = 0;
     emit scoreChanged();
 
@@ -150,16 +155,28 @@ void TetrisGame::updateScore()
     m_timer->start();
 }
 
+void TetrisGame::updateFirstTime(const bool &firstTime)
+{
+    if (m_firstTime != firstTime){
+        m_firstTime = firstTime;
+        emit firstTimeChanged();
+    }
+}
+
 void TetrisGame::updateGameOver(const bool &gameover)
 {
-    m_gameOver = gameover;
-    emit gameOverChanged();
+    if (m_gameOver != gameover){
+        m_gameOver = gameover;
+        emit gameOverChanged();
+    }
 }
 
 void TetrisGame::updatePauseGame(const bool &pauseGame)
 {
-    m_pauseGame = pauseGame;
-    emit pauseGameChanged();
+    if (m_pauseGame != pauseGame){
+        m_pauseGame = pauseGame;
+        emit pauseGameChanged();
+    }
 }
 
 Tetromino* TetrisGame::getRamdomTetro()

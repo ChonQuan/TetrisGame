@@ -9,6 +9,7 @@
 class TetrisGame : public QObject {
     Q_OBJECT
     Q_PROPERTY(int score READ score NOTIFY scoreChanged)
+    Q_PROPERTY(int firstTime READ firstTime NOTIFY firstTimeChanged)
     Q_PROPERTY(int gameOver READ gameOver NOTIFY gameOverChanged)
     Q_PROPERTY(int pauseGame READ pauseGame NOTIFY pauseGameChanged)
 
@@ -33,8 +34,11 @@ signals:
     void pauseGameChanged();
     void newTetrominoChanged(int type);
 
+    void firstTimeChanged();
+
 public:
     void updateScore();
+    void updateFirstTime(const bool &firstTime);
     void updateGameOver(const bool &gameover);
     void updatePauseGame(const bool &pauseGame);
     Tetromino* getRamdomTetro();
@@ -43,6 +47,8 @@ public:
     int gameOver() const;
 
     int pauseGame() const;
+
+    int firstTime() const;
 
 private:
     int m_score;
@@ -53,6 +59,7 @@ private:
     Tetromino* m_nextTetromino;
     QTimer *m_timer;
     int timer;
+    int m_firstTime;
 };
 
 #endif // TETRISGAME_H
