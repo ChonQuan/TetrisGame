@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/Tetris/">
+    <file alias="Main.qml">D:/QT/Tetris/Main.qml</file>
+    <file alias="GameView.qml">D:/QT/Tetris/GameView.qml</file>
+    <file alias="Controls.qml">D:/QT/Tetris/Controls.qml</file>
+  </qresource>
+</RCC>
+

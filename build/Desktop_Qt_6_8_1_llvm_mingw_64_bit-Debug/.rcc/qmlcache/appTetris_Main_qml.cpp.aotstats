@@ -1,0 +1,44 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 442,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 27,
+                        "durationMicroseconds": 144,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 26,
+                        "durationMicroseconds": 608,
+                        "errorMessage": "Cannot access value for name tetrisGame",
+                        "functionName": "onPressed",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 26,
+                        "durationMicroseconds": 150,
+                        "errorMessage": "",
+                        "functionName": "onPressed",
+                        "line": 29
+                    }
+                ],
+                "filepath": "D:/QT/Tetris/Main.qml"
+            }
+        ],
+        "moduleId": "Tetris(appTetris)"
+    }
+]

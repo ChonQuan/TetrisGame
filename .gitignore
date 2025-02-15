@@ -1,0 +1,32 @@
+# Ignore Qt Creator specific files
+*.pro.user
+*.pro.swp
+*.qmake.stash
+*.qmake.cache
+
+# Ignore build directories
+build-*/
+debug/
+release/
+
+# Ignore CMake & Makefile generated files
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+
+# Ignore Qt resource files
+moc_*
+qrc_*
+ui_*
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+.DS_Store

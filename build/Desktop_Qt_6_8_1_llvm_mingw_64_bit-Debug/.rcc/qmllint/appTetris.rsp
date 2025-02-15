@@ -1,0 +1,12 @@
+--bare
+-I
+D:/QT/Tetris/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug
+-I
+C:/Qt/6.8.1/llvm-mingw_64/qml
+--resource
+D:/QT/Tetris/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/.qt/rcc/qmake_Tetris.qrc
+--resource
+D:/QT/Tetris/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/.qt/rcc/appTetris_raw_qml_0.qrc
+D:/QT/Tetris/Main.qml
+D:/QT/Tetris/GameView.qml
+D:/QT/Tetris/Controls.qml

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Tetris">
+    <file alias="qmldir">D:/QT/Tetris/build/Desktop_Qt_6_8_1_llvm_mingw_64_bit-Debug/Tetris/qmldir</file>
+  </qresource>
+</RCC>
+
