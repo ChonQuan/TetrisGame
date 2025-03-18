@@ -95,7 +95,7 @@ void GridModel::setColorTetromino(const std::vector<Block> &blocks, const QColor
     }
 }
 
-bool GridModel::Move(const std::vector<Block> &blocks,const QColor &color)
+bool GridModel::move(const std::vector<Block> &blocks,const QColor &color)
 {
     // Check if possible move
     setColorTetromino(m_previousShape, QColor("black"));

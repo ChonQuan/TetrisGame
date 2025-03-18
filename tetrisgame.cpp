@@ -36,7 +36,7 @@ int TetrisGame::pauseGame() const
 void TetrisGame::moveLeft() {
     if (!m_gameOver) {
         m_currentTetromino->moveLeft();
-        bool checkMoveFinish = m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        bool checkMoveFinish = m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
         //Check moving is finished
         if (!checkMoveFinish) m_currentTetromino->moveRight();
     }
@@ -45,7 +45,7 @@ void TetrisGame::moveLeft() {
 void TetrisGame::moveRight() {
     if (!m_gameOver) {
         m_currentTetromino->moveRight();
-        bool checkMoveFinish = m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        bool checkMoveFinish = m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
         //Check moving is finished
         if (!checkMoveFinish) m_currentTetromino->moveLeft();
     }
@@ -55,7 +55,7 @@ void TetrisGame::moveDown()
 {
     if (!m_gameOver) {
         m_currentTetromino->moveDown();
-        bool checkMoveFinish = m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        bool checkMoveFinish = m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
         //Check moving is finished
         if (!checkMoveFinish) {
             m_gridmodel->clearPreviousTetromino();
@@ -69,8 +69,8 @@ void TetrisGame::moveDown()
 
 void TetrisGame::rotate() {
     if (!m_gameOver) {
-        m_currentTetromino->Rotate();
-        bool checkMoveFinish = m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        m_currentTetromino->rotate();
+        bool checkMoveFinish = m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
         //Check moving is finished
         if (!checkMoveFinish) m_currentTetromino->unRotate();
     }
@@ -81,7 +81,7 @@ void TetrisGame::drop() {
         m_timer->stop();
         int maxDrop = m_gridmodel->checkMaxDrop(m_currentTetromino->getShape());
         m_currentTetromino->drop(maxDrop);
-        bool checkMoveFinish = m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        bool checkMoveFinish = m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
         moveDown();
         m_timer->start(timer);
     }
@@ -114,7 +114,7 @@ void TetrisGame::reset() {
 
     // Ensure Tetromino is placed in the grid
     if (m_currentTetromino) {
-        m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
     }
 
     // Reset game variables
@@ -200,7 +200,7 @@ void TetrisGame::lockTetromino()
 
     // check game over
     if (m_gridmodel->isValidPosition(m_currentTetromino->getShape())){
-        m_gridmodel->Move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
+        m_gridmodel->move(m_currentTetromino->getShape(), m_currentTetromino->getColor());
     } else {
         endGame();
     }

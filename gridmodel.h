@@ -38,7 +38,7 @@ public:
     bool isOutofBound(int row, int col) const;
     bool isCellUnOccupied(int row, int col) const;
     void setColorTetromino(const std::vector<Block> &blocks, const QColor &color);
-    bool Move(const std::vector<Block> &blocks,const QColor &color);
+    bool move(const std::vector<Block> &blocks,const QColor &color);
     int calculateScore();
     void shiftDown(int clearedRow);
     void clearPreviousTetromino();

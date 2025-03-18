@@ -19,9 +19,9 @@ class Tetromino {
 public:
     virtual ~Tetromino() = default;
 
-    void Rotate();
+    void rotate();
     void unRotate();
-    void Move(int row, int col);
+    void moveTo(int row, int col);
     void moveLeft();
     void moveRight();
     void moveDown();
@@ -50,7 +50,7 @@ public:
             {{0, 1}, {1, 1}, {2, 1}, {3, 1}},
         };
         color = QColor("cyan");
-        Move(0,2);
+        moveTo(0,2);
     }
 };
 
@@ -62,7 +62,7 @@ public:
             {{0, 1}, {0, 2}, {1, 1}, {1, 2}}
         };
         color = QColor("yellow");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 
@@ -77,7 +77,7 @@ public:
             {{0, 1}, {1, 0}, {1, 1}, {2, 1}}
         };
         color = QColor("magenta");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 
@@ -92,7 +92,7 @@ public:
             {{0, 0}, {1, 0}, {1, 1}, {2, 1}}
         };
         color = QColor("green");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 class TetrominoZ : public Tetromino {
@@ -106,7 +106,7 @@ public:
             {{0, 1}, {1, 0}, {1, 1}, {2, 0}}
         };
         color = QColor("red");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 class TetrominoJ : public Tetromino {
@@ -120,7 +120,7 @@ public:
             {{0, 1}, {1, 1}, {2, 0}, {2, 1}}
         };
         color = QColor("blue");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 class TetrominoL : public Tetromino {
@@ -134,7 +134,7 @@ public:
             {{0, 0}, {0, 1}, {1, 1}, {2, 1}}
         };
         color = QColor("orange");
-        Move(0,3);
+        moveTo(0,3);
     }
 };
 

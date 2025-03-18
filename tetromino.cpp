@@ -1,6 +1,6 @@
 #include "tetromino.h"
 
-void Tetromino::Rotate() {
+void Tetromino::rotate() {
     currentRotation = (currentRotation + 1) % rotations.size();
 }
 
@@ -10,7 +10,7 @@ void Tetromino::unRotate()
     if (currentRotation == -1) currentRotation = rotations.size() - 1;
 }
 
-void Tetromino::Move(int row, int col) {
+void Tetromino::moveTo(int row, int col) {
     colOffset += col;
     rowOffset += row;
 }
